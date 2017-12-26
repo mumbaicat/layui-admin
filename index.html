@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>首页 - Benthink</title>
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" href="css/toast.style.min.css">
+    <script type="text/javascript" src="js/toast.script.js"></script>
+
+    <script type="text/javascript" src="layui/layui.js"></script>
+    <script type="text/javascript" src="js/notification.js"></script>
+</head>
+<body>
+
+<!--
+顶栏->侧边栏
+<li top-bar top-id="1" class="layui-nav-item layui-this"><a href="javascript:;">控制台</a></li>
+    顶栏要带top-bar属性,top-id是顶栏的id,唯一.
+<ul left-bar left-id="1" class="layui-nav layui-nav-tree" lay-filter="left-nav" style="border-radius: 0;">
+    侧边栏要带left-bar属性,left-id是唯一的,值要和对应的顶栏的top-id一样.
+
+侧边栏->tab
+<a href="javascript:;" data-url="https://www.so.com/" data-id="4" tab-item>
+    链接到tab标签,带 tab-item 属性,要有data-url和data-id. 必填.
+    data-url是URL,data-id是唯一.
+-->
+
+    <!-- 布局容器 -->
+    <div class="layui-layout layui-layout-admin">
+        <!-- 头部 -->
+        <div class="layui-header">
+            <div class="layui-logo">Benthink</div>
+            <!-- 头部区域（可配合layui已有的水平导航） -->
+            <ul class="layui-nav layui-layout-left">
+              <li top-bar top-id="1" class="layui-nav-item layui-this"><a href="javascript:;">控制台</a></li>
+              <li top-bar top-id="2" class="layui-nav-item"><a href="javascript:;">商品管理</a></li>
+              <li top-bar top-id="3" class="layui-nav-item"><a href="javascript:;">用户</a></li>
+              <!-- <li class="layui-nav-item">
+                <a href="javascript:;">其它系统</a>
+                <dl class="layui-nav-child">
+                  <dd><a href="javascript:;">邮件管理</a></dd>
+                  <dd><a href="javascript:;">消息管理</a></dd>
+                  <dd><a href="javascript:;">授权管理</a></dd>
+                </dl>
+              </li> -->
+            </ul>
+
+            <ul class="layui-nav layui-layout-right">
+              <li class="layui-nav-item">
+                <a href="javascript:;">
+                  <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+                  贤心
+                </a>
+                <dl class="layui-nav-child">
+                  <dd><a href="">基本资料</a></dd>
+                  <dd><a href="">安全设置</a></dd>
+                </dl>
+              </li>
+              <li class="layui-nav-item"><a href="">退了</a></li>
+            </ul>
+          </div>
+
+        <!-- 侧边栏 -->
+        <div class="layui-side layui-bg-black">
+            <div class="layui-side-scroll">
+
+                <!-- 控制台的 -->
+                <ul left-bar left-id="1" class="layui-nav layui-nav-tree" lay-filter="left-nav" style="border-radius: 0;">
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a href="javascript:;" data-url="welcome.html" data-id="11" tab-item>
+                            欢迎
+                        </a>
+                    </li>
+
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a href="javascript:;" data-url="http://amazeui.org/widgets/m" data-id="1" tab-item>
+                            Amazeui Mobile
+                        </a>
+                    </li>
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a href="javascript:;">
+                            下拉
+                        </a>
+                        <dl class="layui-nav-child">
+                            <dd>
+                                <a href="javascript:;" data-url="form.html" data-id="2" tab-item>
+                                    表单
+                                </a>
+                            </dd>
+                            <dd>
+                                <a href="javascript:;" data-url="http://cn.bing.com/" data-id="3" tab-item>
+                                    必应
+                                </a>
+                            </dd>
+                            <dd>
+                                <a href="javascript:;" data-url="https://www.so.com/" data-id="4" tab-item>
+                                    360
+                                </a>
+                            </dd>
+                            <dd>
+                                <a href="javascript:;" data-url="https://www.sogou.com/" data-id="5" tab-item>
+                                    搜狗
+                                </a>
+                            </dd>
+                        </dl>
+                    </li>
+                </ul>
+
+                <!-- 商品管理的 -->
+                <ul left-bar left-id="2" class="layui-nav layui-nav-tree" lay-filter="left-nav" style="border-radius: 0;display:none;">
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a href="javascript:;" data-url="http://amazeui.org/widgets/m" data-id="21" tab-item>
+                            管理商品的
+                        </a>
+                    </li>
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a href="javascript:;">
+                            搜索引擎
+                        </a>
+                        <dl class="layui-nav-child">
+                            <dd>
+                                <a href="javascript:;" data-url="https://www.baidu.com/" data-id="22" tab-item>
+                                    百度
+                                </a>
+                            </dd>
+                            <dd>
+                                <a href="javascript:;" data-url="http://cn.bing.com/" data-id="23" tab-item>
+                                    必应
+                                </a>
+                            </dd>
+                            <dd>
+                                <a href="javascript:;" data-url="https://www.so.com/" data-id="24" tab-item>
+                                    360
+                                </a>
+                            </dd>
+                            <dd>
+                                <a href="javascript:;" data-url="https://www.sogou.com/" data-id="25" tab-item>
+                                    搜狗
+                                </a>
+                            </dd>
+                        </dl>
+                    </li>
+                </ul>
+
+                <!-- 用户的 -->
+                <ul left-bar left-id="3" class="layui-nav layui-nav-tree" lay-filter="left-nav" style="border-radius: 0;display:none;">
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a href="javascript:;" data-url="http://amazeui.org/widgets/m" data-id="31" tab-item>
+                            用户的
+                        </a>
+                    </li>
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a href="javascript:;">
+                            搜索引擎
+                        </a>
+                        <dl class="layui-nav-child">
+                            <dd>
+                                <a href="javascript:;" data-url="https://www.baidu.com/" data-id="32" tab-item>
+                                    百度
+                                </a>
+                            </dd>
+                            <dd>
+                                <a href="javascript:;" data-url="http://cn.bing.com/" data-id="33" tab-item>
+                                    必应
+                                </a>
+                            </dd>
+                            <dd>
+                                <a href="javascript:;" data-url="https://www.so.com/" data-id="34" tab-item>
+                                    360
+                                </a>
+                            </dd>
+                            <dd>
+                                <a href="javascript:;" data-url="https://www.sogou.com/" data-id="35" tab-item>
+                                    搜狗
+                                </a>
+                            </dd>
+                        </dl>
+                    </li>
+                </ul>
+
+
+            </div>
+        </div>
+
+        <!-- 主体 -->
+        <div class="layui-body">
+            <!-- 顶部切换卡 -->
+            <div class="layui-tab layui-tab-brief" lay-filter="top-tab" lay-allowClose="true" style="margin: 0;">
+                <ul class="layui-tab-title"></ul>
+                <div class="layui-tab-content" style="padding: 0;"></div>
+            </div>
+        </div>
+
+        <!-- 底部 -->
+        <div class="layui-footer" style="text-align: center; line-height: 44px;">
+            Copyright © 2017 <a href="http://mumbai.cat" target="_blank">Benthink</a> Powered by Dust
+        </div>
+    </div>
+
+    <script type="text/javascript">
+
+    // $.Toast("标题", "你收到了一条消息", "success", {
+    //     stack: true,
+    //     has_icon:true,
+    //     has_close_btn:true,
+    //     fullscreen:false,
+    //     timeout:2700,
+    //     sticky:false,
+    //     has_progress:true,
+    //     rtl:false,
+    // });
+
+    // iframe切换动画
+    function ani(id){
+        $("[iframe-id="+id+"]").hide();
+        $("[iframe-id="+id+"]").fadeIn(127);
+    }
+
+    layui.use(['element'], function() {
+        var element    = layui.element;
+        var layer      = layui.layer;
+
+        var tabfilter  = 'top-tab';
+        var tab        = $('.layui-tab[lay-filter='+tabfilter+']').eq(0);
+        var tabcontent = tab.children('.layui-tab-content').eq(0);
+        var tabtitle   = tab.children('.layui-tab-title').eq(0);
+
+        /**
+         * iframe自适应
+         */
+        $(window).resize(function() {
+            //设置顶部切换卡容器度
+            tabcontent.height($(this).height() - 60 - 41 - 44); //头部高度 顶部切换卡高度 底部高度
+            //设置顶部切换卡容器内每个iframe高度
+            tabcontent.find('iframe').each(function () {
+                $(this).height(tabcontent.height());
+            });
+        }).resize();
+
+        // 监听Tab切换，以改变地址hash值
+        element.on('tab('+tabfilter+')', function(){
+             try {
+                 var id = this.getAttribute('lay-id');
+             } catch (e) {
+                 var id = null;
+             }
+             if(id!=null){
+                 location.hash = tabfilter+'='+ id;
+                 ani(id);
+             }
+        });
+
+        // 点击左侧链接的时候
+        $('[tab-item]').bind('click',function(){
+            var id = $(this).attr('data-id');
+            var title = $(this).text();
+            var url = $(this).attr('data-url');
+
+            var iframes = $("[lay-id="+id+"]").length;
+            if(iframes==0){
+                // 不存在的情况
+                var iframe = '<iframe';
+                iframe += ' src="'+url +'" iframe-id="'+id+'"';
+                iframe += ' style="width: 100%; height: '+tabcontent.height()+'px; border: 0px;"';
+                iframe += '></iframe>';
+                //顶部切换卡新增一个卡片
+                element.tabAdd(tabfilter, {'title': title,'content': iframe,'id':id});
+                ani(id);
+            }
+            // 添加记录
+            location.hash = tabfilter+'='+ id;
+            // 改变tab
+            element.tabChange(tabfilter,id);
+        });
+
+        // 顶部导航选择时
+        $('[top-bar]').bind('click',function(){
+            var id = $(this).attr('top-id');
+            var lefts = $("[left-bar][left-id='"+id+"']").length;
+            if(lefts!=0){
+                // top-bar有对应的left-bar的情况下
+                $("[left-bar]").hide();
+                $("[left-bar][left-id='"+id+"']").fadeIn(500);
+            }
+        });
+
+        /**
+         * 初始化点击侧边栏导航
+         */
+        var layid = location.hash.replace(/^#top-tab=/, '');
+        // layui-this
+        if(layid){
+            $('.layui-side-scroll').find('[data-id='+layid+']').eq(0).click();    // 根据传入的ID跳转
+        }else{
+            $('.layui-side-scroll').find('[data-url][data-id]').eq(0).click();    // 点击第一个
+        }
+
+    });
+    </script>
+</body>
+</html>
