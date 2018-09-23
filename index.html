@@ -303,12 +303,14 @@
         }
 
         /* layer iframe关闭父页面
-        if(x.code == 200){
-            layer.alert(x.msg,{icon:1,closeBtn:0},function(){
+        if (x.code == 200) {
+            layer.alert(x.msg, {icon: 1, closeBtn: 0}, function () {
                 var index = parent.layer.getFrameIndex(window.name);
-                parent.layer.close();
+                parent.layer.close(index);
                 parent.location.reload();
             });
+        } else {
+            layer.alert(x.msg, {icon: 2});
         }
         */
     });
